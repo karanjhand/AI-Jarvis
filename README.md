@@ -1,6 +1,6 @@
 # AI-Jarvis
 An AI speech engine named jarvis which works by listening to the commands given by the user and performs the particular tasks according to the given command.
-user can type the following commands : 
+user can command the following to jarvis : 
 
 open youtube : opens the youtube for the user.
 
