@@ -4,7 +4,8 @@ import speech_recognition as sr
 import os
 import re
 import webbrowser
-from time import gmtime, strftime
+import datetime
+#from time import gmtime, strftime
 import smtplib
 import requests
 from weather import Weather
@@ -64,7 +65,7 @@ def assistant(command):
 
     elif 'open youtube' in command:
         webbrowser.open('youtube.com')
-        
+
     elif 'open facebook' in command:
         webbrowser.open('facebook.com')    
 
@@ -123,7 +124,13 @@ def assistant(command):
 
   
         
-
+currentHour = int(datetime.datetime.now().hour)
+if currentHour>0 and currentHour < 12:
+    talkToMe('good morning sir')
+elif currentHour >= 12 and currentHour <= 16:
+    talkToMe('good afternoon sir')    
+else:
+    talkToMe('good evening sir')
 talkToMe('I am jarvis your personal assistant how can I help you')
 
 #loop to continue executing multiple commands
